@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cal="clr-namespace:Shaunebu.MAUI.CalendarControl;assembly=Shaunebu.MAUI.CalendarControl"
+             x:Class="Shaunebu.MAUI.CalendarControl.Demo.MainPage"
+             Title="Calendar Demo">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- Selection Mode Picker -->
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Label Text="Selection Mode:" VerticalOptions="Center" FontAttributes="Bold" />
+                <Picker x:Name="SelectionModePicker"
+                        SelectedIndex="1"
+                        SelectedIndexChanged="OnSelectionModeChanged">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>None</x:String>
+                            <x:String>Single</x:String>
+                            <x:String>Multiple</x:String>
+                            <x:String>Range</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </HorizontalStackLayout>
+
+            <!-- Calendar Control -->
+            <Border Stroke="{StaticResource Primary}"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 12"
+                    Padding="12"
+                    BackgroundColor="White">
+                <cal:CalendarView
+                    x:Name="DemoCalendar"
+                    SelectionMode="Single"
+                    ShowWeekNumbers="True"
+                    ShowTodayButton="True"
+                    ShowNavigationArrows="True"
+                    ShowLeadingAndTrailingDates="True"
+                    DayNameFormat="Abbreviated"
+                    HeaderFontSize="20"
+                    HeaderTextColor="{StaticResource Primary}"
+                    TodayTextColor="{StaticResource Primary}"
+                    TodayBorderColor="{StaticResource Primary}"
+                    SelectionBackground="{StaticResource Primary}"
+                    SelectionTextColor="White"
+                    NavigationArrowColor="{StaticResource Primary}"
+                    CellCornerRadius="20"
+                    SelectionChanged="OnSelectionChanged"
+                    ViewChanged="OnViewChanged"
+                    DisplayDateChanged="OnDisplayDateChanged" />
+            </Border>
+
+            <!-- Status Label -->
+            <Label x:Name="StatusLabel"
+                   Text="Tap a date to select it"
+                   HorizontalOptions="Center"
+                   FontSize="14"
+                   TextColor="Gray" />
+
+            <!-- Action Buttons -->
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Button Text="Go to Today"
+                        Clicked="OnGoToTodayClicked"
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White" />
+                <Button Text="Reset Selection"
+                        Clicked="OnResetClicked"
+                        BackgroundColor="Gray"
+                        TextColor="White" />
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
