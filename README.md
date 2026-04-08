@@ -28,6 +28,10 @@
 - **Accessibility** — `AutomationProperties` on all day cells with descriptive labels
 - **Cross-platform** — Android, iOS, macOS (Mac Catalyst), and Windows
 
+## 🎥 Demo
+
+![Calendar Demo](ShaunebuMAUICalendarControl.gif)
+
 ## Feature Highlights 🆚
 
 | Feature | Description |
