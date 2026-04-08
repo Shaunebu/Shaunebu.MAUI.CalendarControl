@@ -62,7 +62,7 @@ Or via `PackageReference`:
 
 ```xml
 <ItemGroup>
-  <PackageReference Include="Shaunebu.MAUI.CalendarControl" Version="1.0.6" />
+  <PackageReference Include="Shaunebu.MAUI.CalendarControl" Version="1.0.x" />
 </ItemGroup>
 ```
 
